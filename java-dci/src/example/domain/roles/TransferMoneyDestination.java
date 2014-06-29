@@ -21,6 +21,6 @@ public class TransferMoneyDestination implements MoneyDestination {
 
 	@Override
 	public void deposit(double amount) {
-		account.decreaseBalance(amount);
+		account.increaseBalance(amount);
 	}
 }

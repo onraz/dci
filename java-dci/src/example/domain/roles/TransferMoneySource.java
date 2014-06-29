@@ -21,7 +21,7 @@ public class TransferMoneySource implements MoneySource {
 
 	@Override
 	public void withdraw(double amount) {
-		if (account.getBalance() > amount) {
+		if (account.getBalance() >= amount) {
 			account.decreaseBalance(amount);
 		} else {
 			throw new IllegalArgumentException("Insufficient Balance in Source");
