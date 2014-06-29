@@ -1,6 +1,5 @@
 package example.usecase
 
-import example.dci.Context
 import example.domain.Account
 import example.domain.roles.MoneyDestination
 import example.domain.roles.MoneySource
@@ -11,16 +10,15 @@ import example.domain.roles.TransferMoneySource
  * Transfer Money from Source to Destination
  * Context attaches roles to Objects to fulfill a usecase
  */
-public class WithdrawalContext implements Context {
+public class WithdrawalContext {
 	
-	Account sourceAccount
-	Account destAccount
+	Account source
+	Account dest
 	double amount
 	
-	@Override
-	public void execute() throws Exception {
-		MoneySource moneySource = sourceAccount.with TransferMoneySource
-		MoneyDestination moneyDestination = destAccount.with TransferMoneyDestination
+	def execute() {
+		MoneySource moneySource = source as TransferMoneySource
+		MoneyDestination moneyDestination = dest as TransferMoneyDestination
 		
 		moneySource.withdraw(amount)
 		moneyDestination.deposit(amount)
