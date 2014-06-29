@@ -1,7 +1,8 @@
-package example.domain;
+package example.domain.roles;
 
 import example.dci.Actor;
 import example.dci.Role;
+import example.domain.Account;
 
 /**
  * Methodful role to implement how Money is transferred from a Source
@@ -9,7 +10,7 @@ import example.dci.Role;
  * @author Raz
  *
  */
-public class TransferMoneySource implements MoneySource {
+public class TransferMoneyDestination implements MoneyDestination {
 	Account account;
 	
 	@Override
@@ -19,11 +20,7 @@ public class TransferMoneySource implements MoneySource {
 	}
 
 	@Override
-	public void withdraw(double amount) {
-		if (account.getBalance() > amount) {
-			account.decreaseBalance(amount);
-		} else {
-			throw new IllegalArgumentException("Insufficient Balance in Source");
-		}
+	public void deposit(double amount) {
+		account.decreaseBalance(amount);
 	}
 }

@@ -2,10 +2,10 @@ package example.usecase;
 
 import example.dci.Context;
 import example.domain.Account;
-import example.domain.MoneyDestination;
-import example.domain.MoneySource;
-import example.domain.TransferMoneyDestination;
-import example.domain.TransferMoneySource;
+import example.domain.roles.MoneyDestination;
+import example.domain.roles.MoneySource;
+import example.domain.roles.TransferMoneyDestination;
+import example.domain.roles.TransferMoneySource;
 
 /**
  * Transfer Money from Source to Destination

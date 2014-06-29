@@ -1,4 +1,4 @@
-package example.domain;
+package example.domain.roles;
 
 import example.dci.Role;
 
