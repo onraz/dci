@@ -9,6 +9,7 @@ import example.domain.TransferMoneySource;
 
 /**
  * Transfer Money from Source to Destination
+ * Context attaches roles to Objects to fulfill a usecase
  */
 public class WithdrawalContext implements Context {
 	
