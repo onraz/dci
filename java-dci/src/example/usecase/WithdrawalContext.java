@@ -1,4 +1,4 @@
-package examples.usecase;
+package example.usecase;
 
 import example.dci.Context;
 import example.domain.Account;
