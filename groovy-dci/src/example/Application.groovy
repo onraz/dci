@@ -1,19 +1,19 @@
 package example
 
-import example.domain.Account
+import example.domain.*
 import example.usecase.WithdrawalContext
 
 class Application {
 
 	static main(args) {
-		Account savings = new Account(50)
-		Account checkings = new Account(200)
+		Account savings = new SavingsAccount(50.0)
+		Account checkings = new CheckingAccount(200.0)
 		
-		println "Before Transaction: Savings ${savings.balance}, Checkings ${checkings.balance}"
+		println "Before Transaction: ${savings}, ${checkings}"
 		
 		new WithdrawalContext([source :checkings, dest: savings, amount:100]).execute()
 		
-		println "After Transaction: Savings ${savings.balance}, Checkings ${checkings.balance}"
+		println "After Transaction: ${savings}, ${checkings}"
 	}
 
 }

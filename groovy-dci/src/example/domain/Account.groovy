@@ -1,22 +1,23 @@
 package example.domain
 
-class Account {
+trait Account {
+	double balance = 0
 	
-	private double balance = 0
-
-	public Account(double balance) {
-		this.balance = balance
-	}
-	
-	public double getBalance() {
-		return balance
-	}
-
-	public void increaseBalance(double amount) {
+	void increaseBalance(double amount) {
 		balance += amount
 	}
 	
-	public void decreaseBalance(double amount) {
+	void decreaseBalance(double amount) {
 		balance -= amount
 	}
+}
+
+class SavingsAccount implements Account {
+	SavingsAccount(balance) { this.balance = balance }
+	@Override String toString() { "Savings: ${balance}" }
+}
+
+class CheckingAccount implements Account {
+	CheckingAccount(balance) { this.balance = balance }
+	@Override String toString() { "Checking: ${balance}" }
 }
