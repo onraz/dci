@@ -12,16 +12,14 @@ import example.domain.roles.TransferMoneySource
  */
 public class WithdrawalContext {
 	
-	Account source
-	Account dest
+	def source, dest
 	double amount
 	
 	def execute() {
 		MoneySource moneySource = source as TransferMoneySource
 		MoneyDestination moneyDestination = dest as TransferMoneyDestination
 		
-		moneySource.withdraw(amount)
-		moneyDestination.deposit(amount)
+		moneySource.withdraw(amount, moneyDestination)
 	}
 
 }

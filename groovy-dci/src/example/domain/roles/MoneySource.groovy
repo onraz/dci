@@ -5,5 +5,5 @@ package example.domain.roles
  * 
  */
 interface MoneySource {
-	void withdraw(double amount)
+	void withdraw(double amount, MoneyDestination destination)
 }
