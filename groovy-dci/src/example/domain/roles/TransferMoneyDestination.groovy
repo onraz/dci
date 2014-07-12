@@ -6,9 +6,8 @@ import example.domain.Loggable
  * Methodful role to implement how Money is transferred from a Source
  *
  */
-trait TransferMoneyDestination implements MoneyDestination, Loggable {
+trait TransferMoneyDestination implements MoneyDestination {
 	public void deposit(double amount) {
 		increaseBalance(amount)
-		updateLog("Deposit of ${amount} Complete")
 	}
 }

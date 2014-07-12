@@ -1,13 +1,14 @@
 package example
 
-import example.domain.*
+import example.domain.CheckingAccount
+import example.domain.SavingsAccount
 import example.usecase.WithdrawalContext
 
 class Application {
 
 	static main(args) {
-		Account savings = new SavingsAccount(50.0)
-		Account checkings = new CheckingAccount(200.0)
+		def savings = new SavingsAccount(50.0)
+		def checkings = new CheckingAccount(200.0)
 		
 		println "Before Transaction: ${savings}, ${checkings}"
 		

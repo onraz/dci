@@ -12,7 +12,7 @@ trait TransferMoneySource implements MoneySource, Loggable {
 		if (getBalance() > amount) {
 			decreaseBalance(amount)
 			dest.deposit(amount)
-			updateLog("Withdrawal of ${amount} performed")
+			updateLog("Transfer of ${amount} performed")
 		} else {
 			throw new IllegalArgumentException("Insufficient Balance in Source")
 		}
