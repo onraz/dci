@@ -10,14 +10,28 @@ trait Account {
 	void decreaseBalance(double amount) {
 		balance -= amount
 	}
+	
+	void updateLog(msg) {
+		println msg
+	}
 }
 
 class SavingsAccount implements Account {
-	SavingsAccount(balance) { this.balance = balance }
-	@Override String toString() { "Savings: ${balance}" }
+	SavingsAccount(balance) { 
+		this.increaseBalance(balance) 
+	}
+	
+	@Override String toString() { 
+		"Savings: ${balance}" 
+	}
 }
 
 class CheckingAccount implements Account {
-	CheckingAccount(balance) { this.balance = balance }
-	@Override String toString() { "Checking: ${balance}" }
+	CheckingAccount(balance) { 
+		this.increaseBalance(balance)  
+	}
+	
+	@Override String toString() { 
+		"Checking: ${balance}" 
+	}
 }
